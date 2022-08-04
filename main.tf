@@ -1,15 +1,15 @@
 terraform {
   required_providers {
     aws = {
-      source  = "88Victory88/aws"
+      source  = "hashicorp/aws"
       version = "~> 4.0.0"
     }
   }
 }
 
-#provider "aws" {
- # region = var.region
-#}
+provider "aws" {
+  region = var.region
+}
 
 resource "aws_s3_bucket" "bucket" {
   bucket = "${var.prefix}-${var.name}"
